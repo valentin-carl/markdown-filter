@@ -5,4 +5,4 @@ Use as:
 mdlu <filename> <pattern>
 ```
 
-`mdlu` will look for matches of the pattern in all titles (i.e., any line starting with `#+`) and print it plus any subsections.
+`mdlu` will look for matches of the pattern in all titles (i.e., any line starting with `#+`) and print it and any subsections.
