@@ -1,9 +1,8 @@
-use std::fs::read_to_string;
 use regex::Regex;
 use std::env;
+use std::fs::read_to_string;
 
 fn main() {
-
     let args: Vec<String> = env::args().collect();
 
     assert!(args.len() > 2);
@@ -17,7 +16,6 @@ fn main() {
     let mut flag = false;
 
     for s in contents {
-
         let current_level: i32 = level(&s);
 
         // check whether it's time to stop
@@ -26,7 +24,7 @@ fn main() {
         }
 
         // find starting place
-        if expr.is_match(&s) {
+        if !flag && expr.is_match(&s) {
             target_level = level(&s);
             flag = true;
             if target_level == 0 {
@@ -65,4 +63,3 @@ fn level(s: &str) -> i32 {
     }
     count
 }
-
